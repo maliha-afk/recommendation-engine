@@ -3,8 +3,9 @@ from sklearn.feature_extraction.text import CountVectorizer as CVR
 import pandas as pd
 
 moviedata={
-    "title":["Transformers","Avengers Endgames","Interstellers","Dark Knight","Openheimer"],
-    "genre":["sci fi Action Thriller","Thriller","Action Thriller","Tragedy Drama","Historical Drama Documentary"]
+    "title":["Transformers","Avengers Endgames","Interstellers","Dark Knight","Openheimer","twilight"],
+    "genre":["sci fi Action Thriller","Thriller","Action Thriller","Tragedy Drama",
+             "Historical Drama Documentary","romance"]
 }
 
 Moviedata=pd.DataFrame(moviedata)
@@ -15,7 +16,7 @@ genre_matrix=vectorizer.fit_transform(Moviedata["genre"])
 #print(genre)
 
 similarity=CS(genre_matrix)
-movieindex=Moviedata[Moviedata["title"]=="Openheimer"].index[0]
+movieindex=Moviedata[Moviedata["title"]==,"twilight"].index[0]
 #print(movieindex)
 
 score=list(enumerate(similarity[movieindex]))
